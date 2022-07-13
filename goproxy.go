@@ -282,6 +282,9 @@ func (g *Goproxy) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 	}
 
 	name, err := url.PathUnescape(req.URL.Path)
+	if g.goBinEnv["ESCAPEURLPREFIX"] != "" && strings.HasPrefix(name, g.goBinEnv["ESCAPEURLPREFIX"]) {
+		name = strings.Replace(name, g.goBinEnv["ESCAPEURLPREFIX"], "", 1)
+	}
 	if err != nil ||
 		!strings.HasPrefix(name, "/") ||
 		strings.HasSuffix(name, "/") {
