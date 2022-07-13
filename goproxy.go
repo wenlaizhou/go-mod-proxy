@@ -1,7 +1,7 @@
 /*
-Package goproxy implements a minimalist Go module proxy handler.
+package modproxy implements a minimalist Go module proxy handler.
 */
-package goproxy
+package modproxy
 
 import (
 	"bytes"
