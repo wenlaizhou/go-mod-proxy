@@ -9,7 +9,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/goproxy/goproxy"
+	goproxy "github.com/wenlaizhou/go-mod-proxy"
 )
 
 var (
